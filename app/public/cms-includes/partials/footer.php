@@ -1,4 +1,0 @@
-<hr>
-<footer>
-    Footer
-</footer>

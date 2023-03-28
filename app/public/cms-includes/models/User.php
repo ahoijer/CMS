@@ -46,7 +46,7 @@ class User extends Database {
 
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['message'] = 'Sucessfully logged in';
-                header('location: dashboard.php');
+                header('location: index.php');
                 exit();
             }
             } catch (\Throwable $th) {

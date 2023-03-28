@@ -11,6 +11,8 @@ include_once ROOT . "/cms-includes/models/Database.php";
 include_once ROOT . "/cms-includes/models/Template.php";
 include_once ROOT . "/cms-includes/models/User.php";
 
+$title = 'Login';
+
 $user = new User();
 
 if ($_POST) {
@@ -25,7 +27,7 @@ if ($_POST) {
     if ($result) {
         $_SESSION['user_id'] = $result['id'];
         $_SESSION['message'] = 'Sucessfully logged in';
-        header('location: dashboard.php');
+        header('location: index.php');
         exit();
     }
 }
@@ -40,7 +42,7 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title><?php echo $title ?></title>
 </head>
 
 <body>
