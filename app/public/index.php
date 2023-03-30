@@ -1,6 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
+session_start();
+
+include_once 'cms-config.php';
+include_once ROOT . "/cms-includes/global-functions.php";
+include_once ROOT . "/cms-includes/models/Database.php";
+include_once ROOT . "/cms-includes/models/Template.php";
+include_once ROOT . "/cms-includes/models/User.php";   
+
 echo "Hello world";
+
+$title = 'Dashboard';
+
 
 ?>
 
@@ -13,6 +26,7 @@ echo "Hello world";
     <title><?php echo $title ?></title>
 </head>
 <body>
+    <?php include ROOT . '/cms-includes/partials/nav.php' ?>
 <a href="logout.php">Logout</a>
 </body>
 </html>
