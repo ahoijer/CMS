@@ -1,14 +1,11 @@
 <?php
 declare(strict_types=1);
 
-// use LDAP\Result;
-
 session_start();
 
 include_once 'cms-config.php';
 include_once ROOT . "/cms-includes/global-functions.php";
 include_once ROOT . "/cms-includes/models/Database.php";
-include_once ROOT . "/cms-includes/models/Template.php";
 include_once ROOT . "/cms-includes/models/User.php";
 
 $title = 'Login';
@@ -27,7 +24,7 @@ if ($_POST) {
     if ($result) {
         $_SESSION['user_id'] = $result['id'];
         $_SESSION['message'] = 'Sucessfully logged in';
-        header('location: index.php');
+        header('location: pages.php');
         exit();
     }
 }
@@ -43,6 +40,9 @@ if ($_POST) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title ?></title>
+
+    <link rel="stylesheet" href="/cms-content/styles/style.css" type="text/css">
+
 </head>
 
 <body>
@@ -55,21 +55,22 @@ if ($_POST) {
         }
         ?>
     <main>
-        <h1>Login</h1>
+        <div class="wrapper_login">
+        <h2>Space| Work</h2>
 
         <form action="" method="post">
 
-            <label for="username">Username</label>
+            <label for="username">Username:</label>
             <input type="text" name="username" id="username">
 
-            <label for="password">Password</label>
+            <label for="password">Password:</label>
             <input type="password" name="password" id="password">
 
-            <input type="submit" value="Login">
+            <input type="submit" value="Take me to Space| Work" class="button">
         </form>
 
-        <p>Don't got any account? <a href="register.php">Register here</a></p>
-
+        <p>Oops, I am not with the force! <a href="register.php">| Join it here</a></p>
+        </div>
     </main>
 </body>
 

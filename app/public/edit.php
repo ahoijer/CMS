@@ -18,8 +18,6 @@ if (isset($_GET['id'])) {
 
     $result = $page_database->one_page($id);
 
-    print_r($result);
-
     $form_title = $result['title'];
     echo $form_title;
     $form_content = $result['content'];
