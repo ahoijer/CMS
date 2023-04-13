@@ -46,7 +46,7 @@ class User extends Database {
 
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['message'] = 'Sucessfully logged in';
-                header('location: index.php');
+                header('location: pages.php');
                 exit();
             }
             } catch (\Throwable $th) {
@@ -70,6 +70,25 @@ class User extends Database {
         } catch (\Throwable $th) {
             throw $th;
         }
+}
+
+
+public function all_users(){
+    $sql = "SELECT * FROM user";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+}
+
+public function one_user($id){
+    $sql = "SELECT * FROM user WHERE id = :id";
+    $stmt = $this->db->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 }

@@ -47,6 +47,10 @@ h1 {
     cursor: pointer;
 }
 
+.button #black {
+    color: #3F362D;
+}
+
 #register_button a {
     font-family: 'Roboto Mono', monospace;
     text-decoration: none;

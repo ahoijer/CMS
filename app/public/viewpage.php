@@ -40,11 +40,9 @@ if (isset($_GET['id'])) {
 
 </head>
 <body id="body_view">
-    <div class="wrapper">
-    <div class="sidebar">
+
 <?php include ROOT . '/cms-includes/partials/nav.php' ?>
-</div>
-</div>
+
 <?php include ROOT . '/cms-includes/partials/header.php' ?>
 
 

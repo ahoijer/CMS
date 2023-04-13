@@ -31,7 +31,7 @@ $title = 'Dashboard';
 
     <h1>Space| Work</h1>
 
-    <button class="button"><a href="login.php">Login to Space</a></button>
+    <button class="button"><a href="login.php" id="black">Login to Space</a></button>
     <a href="register.php" id="register_account">Got no account? Let's create one to join the force</a>
     </div>
 </body>

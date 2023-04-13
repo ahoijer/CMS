@@ -54,8 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css">
-    <title>Create Crud App</title>
+    <title><?php echo $title ?></title>
+
+    <link rel="stylesheet" href="/cms-content/styles/style.css" type="text/css">
+
 </head>
 
 <body>
@@ -65,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ?>
     <main>
         <h1><?php echo $title ?></h1>
-        <a href="index.php">Back</a>
+        <a href="pages.php">Back</a>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <label for="title">Title</label>

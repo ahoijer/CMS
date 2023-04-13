@@ -19,9 +19,9 @@ if (isset($_GET['id'])) {
     $result = $page_database->one_page($id);
 
     $form_title = $result['title'];
-    echo $form_title;
+    // echo $form_title;
     $form_content = $result['content'];
-    echo $form_content;
+    // echo $form_content;
     $form_id = $result['id'];
 }
 
@@ -30,8 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $form_title = $_POST['title'];
     $form_content = $_POST['content'];
     $form_id = $_POST['id'];
-
-    print_r($_POST);
 
     if (!empty($form_title)) {
 
@@ -52,6 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title ?></title>
+
+    <link rel="stylesheet" href="/cms-content/styles/style.css" type="text/css">
+
 </head>
 
 <body>
